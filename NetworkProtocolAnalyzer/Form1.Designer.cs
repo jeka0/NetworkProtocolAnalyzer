@@ -38,25 +38,25 @@ namespace NetworkProtocolAnalyzer
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(154, 206);
+            this.comboBox1.Location = new System.Drawing.Point(58, 137);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(438, 28);
+            this.comboBox1.Size = new System.Drawing.Size(381, 28);
             this.comboBox1.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(150, 168);
+            this.label2.Location = new System.Drawing.Point(205, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(193, 25);
+            this.label2.Size = new System.Drawing.Size(253, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Choose an interface:";
             // 
             // choose
             // 
-            this.choose.Location = new System.Drawing.Point(623, 200);
+            this.choose.Location = new System.Drawing.Point(460, 134);
             this.choose.Name = "choose";
             this.choose.Size = new System.Drawing.Size(143, 34);
             this.choose.TabIndex = 4;
@@ -68,12 +68,13 @@ namespace NetworkProtocolAnalyzer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(687, 260);
             this.Controls.Add(this.choose);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

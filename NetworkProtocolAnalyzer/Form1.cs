@@ -13,7 +13,8 @@ namespace NetworkProtocolAnalyzer
 {
     public partial class Form1 : Form
     {
-        List<LibPcapLiveDevice> interfaceList = new List<LibPcapLiveDevice>();
+        private MainForm mainForm;
+        private List<LibPcapLiveDevice> interfaceList = new List<LibPcapLiveDevice>();
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +22,7 @@ namespace NetworkProtocolAnalyzer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList; 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             LibPcapLiveDeviceList devices = LibPcapLiveDeviceList.Instance;
             
             foreach (LibPcapLiveDevice device in devices)
@@ -30,12 +31,19 @@ namespace NetworkProtocolAnalyzer
                 interfaceList.Add(device);
                 comboBox1.Items.Add(device.Interface.FriendlyName);
             }
+            if(comboBox1.Items.Count>0)comboBox1.SelectedIndex = 0;
         }
 
         private void choose_Click(object sender, EventArgs e)
         {
-           
+            mainForm = new MainForm(interfaceList[comboBox1.SelectedIndex]);
+            mainForm.Show();
+            this.Close();
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (mainForm == null) Application.Exit();
+        }
     }
 }
